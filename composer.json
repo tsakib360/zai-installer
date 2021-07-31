@@ -1,0 +1,27 @@
+{
+    "name": "tsakib360/zai-installer",
+    "description": "Laravel Web Installer For Zainiklab",
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tanvir Sakib",
+            "email": "tsakib360@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Tsakib360\\ZaiInstaller\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tsakib360\\ZaiInstaller\\Providers\\ZaiInstallerServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}
