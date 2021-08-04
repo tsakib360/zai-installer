@@ -231,7 +231,16 @@ class InstallController extends Controller
         'PUSHER_APP_SECRET='."\n".
         'PUSHER_APP_CLUSTER=mt1'."\n\n".
         'MIX_PUSHER_APP_KEY='."\n".
-        'MIX_PUSHER_APP_CLUSTER=';
+        'MIX_PUSHER_APP_CLUSTER='.
+        'PAYPAL_BASE_URI=https://api-m.sandbox.paypal.com'."\n".
+        'PAYPAL_CLIENT_ID=ASKGuXrMkRNWHnhAb4A49DzDH5WV4KI1tzwvHw1uaLJPHHSY27jc1AyjjdXFni_fVEcuS9FI1EKZcdNm'."\n".
+        'PAYPAL_CLIENT_SECRET=EFZXxyknLyWXu-ggniZSGwAwqFdH5Y3vS6nEcSD77c8mEvI6NPuDVQt-WpIcz2kTXsLukY32TZ8slIZa'."\n".
+        'PAYPAL_MONTHLY_PLAN=P-3HL46566ET627512XMDBS6EI'."\n".
+        'PAYPAL_YEARLY_PLAN=P-57E26743EH969593FMDBS7QI'."\n\n".
+        'STRIPE_BASE_URI=https://api.stripe.com'."\n".
+        'STRIPE_KEY=pk_test_51IkVYcHdZxBbG9oi0vltSm75Gd1Sb7MSD0MGGQzz2u2c1Zma6WCxxqi0gTXAM7xgmdZZIVeB1cXkgmYAmRpusWPg003YEtwhB3'."\n".
+        'STRIPE_SECRET=sk_test_51IkVYcHdZxBbG9oitCh17bmvc6kHhOtQ8HkanugbLwRlre52F6uq0Vs4cec7hHEwY2FeRmFSMmIMDtjGA0O9eVlM00ziij2UgJ'."\n\n".
+        'SSLCOMMERZE_BASE_URI= https://sandbox.sslcommerz.com';
 
         file_put_contents($envPath, $envFileData);
 
