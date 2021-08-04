@@ -231,7 +231,7 @@ class InstallController extends Controller
         'PUSHER_APP_SECRET='."\n".
         'PUSHER_APP_CLUSTER=mt1'."\n\n".
         'MIX_PUSHER_APP_KEY='."\n".
-        'MIX_PUSHER_APP_CLUSTER='.
+        'MIX_PUSHER_APP_CLUSTER='."\n\n".
         'PAYPAL_BASE_URI=https://api-m.sandbox.paypal.com'."\n".
         'PAYPAL_CLIENT_ID=ASKGuXrMkRNWHnhAb4A49DzDH5WV4KI1tzwvHw1uaLJPHHSY27jc1AyjjdXFni_fVEcuS9FI1EKZcdNm'."\n".
         'PAYPAL_CLIENT_SECRET=EFZXxyknLyWXu-ggniZSGwAwqFdH5Y3vS6nEcSD77c8mEvI6NPuDVQt-WpIcz2kTXsLukY32TZ8slIZa'."\n".
