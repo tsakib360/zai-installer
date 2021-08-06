@@ -17,7 +17,7 @@
                 <div class="col-xl-4 col-lg-6 col-md-8">
                     <div class="breadcrumb-text">
                         <a class="brand-logo" href="index.html"><img src="{{ asset('zaifiles/assets/images/logo.png') }}" alt="logo" /></a>
-                        <h2>Laravel News and Magazine PHP Script Installer</h2>
+                        <h2>zaitors - Hospital Management Laravel Theme Installer</h2>
                         <p>{{ \Carbon\Carbon::parse(now())->format('l, j F Y') }}</p>
                     </div>
                 </div>
