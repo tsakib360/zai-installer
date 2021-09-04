@@ -240,7 +240,11 @@ class InstallController extends Controller
         'STRIPE_BASE_URI=https://api.stripe.com'."\n".
         'STRIPE_KEY=pk_test_51IkVYcHdZxBbG9oi0vltSm75Gd1Sb7MSD0MGGQzz2u2c1Zma6WCxxqi0gTXAM7xgmdZZIVeB1cXkgmYAmRpusWPg003YEtwhB3'."\n".
         'STRIPE_SECRET=sk_test_51IkVYcHdZxBbG9oitCh17bmvc6kHhOtQ8HkanugbLwRlre52F6uq0Vs4cec7hHEwY2FeRmFSMmIMDtjGA0O9eVlM00ziij2UgJ'."\n\n".
-        'SSLCOMMERZE_BASE_URI= https://sandbox.sslcommerz.com';
+        'SSLCOMMERZE_BASE_URI= https://sandbox.sslcommerz.com'."\n\n".
+        'GOOGLE_CLIENT_ID=156170740263-a6fo43vhbh0uc4ehf56hm4e948u301kn.apps.googleusercontent.com'."\n".
+        'GOOGLE_CLIENT_SECRET=ihbqeruodUfTOxMwJXHvnZn3'."\n\n".
+        'FACEBOOK_CLIENT_ID=241753833950328'."\n".
+        'FACEBOOK_CLIENT_SECRET=aaad2a133ceb80661b5545abab8e5bde';
 
         file_put_contents($envPath, $envFileData);
 
