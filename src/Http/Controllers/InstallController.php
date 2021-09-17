@@ -187,7 +187,6 @@ class InstallController extends Controller
 
     public function saveENV(Request $request)
     {
-        $env_val['APP_NAME'] = $request->app_name;
         $env_val['APP_KEY'] = 'base64:'.base64_encode(Str::random(32));
         $env_val['APP_URL'] = $request->app_url;
         $env_val['DB_DATABASE'] = $request->db_name;
