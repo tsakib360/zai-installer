@@ -187,66 +187,18 @@ class InstallController extends Controller
 
     public function saveENV(Request $request)
     {
-        $envPath = base_path('.env');
+        $env_val['APP_NAME'] = $request->app_name;
+        $env_val['APP_KEY'] = 'base64:'.base64_encode(Str::random(32));
+        $env_val['APP_URL'] = $request->app_url;
+        $env_val['DB_DATABASE'] = $request->db_name;
+        $env_val['DB_USERNAME'] = $request->db_user;
+        $env_val['DB_PASSWORD'] = $request->db_password;
+        $env_val['MAIL_HOST'] = $request->mail_host;
+        $env_val['MAIL_PORT'] = $request->mail_port;
+        $env_val['MAIL_USERNAME'] = $request->mail_username;
+        $env_val['MAIL_PASSWORD'] = $request->mail_password;
 
-        $envFileData =
-        'APP_NAME=\''.$request->app_name."'\n".
-        'APP_ENV=local'."\n".
-        'APP_KEY='.'base64:'.base64_encode(Str::random(32))."\n".
-        'APP_DEBUG=true'."\n".
-        'APP_URL='.$request->app_url."\n\n".
-        'LOG_CHANNELL=stack'."\n".
-        'LOG_LEVEL=debug'."\n\n".
-        'DB_CONNECTION=mysql'."\n".
-        'DB_HOST='.$request->db_host."\n".
-        'DB_PORT=3306'."\n".
-        'DB_DATABASE='.$request->db_name."\n".
-        'DB_USERNAME='.$request->db_user."\n".
-        'DB_PASSWORD='.$request->db_password."\n\n".
-        'BROADCAST_DRIVER=log'."\n".
-        'CACHE_DRIVER=file'."\n".
-        'FILESYSTEM_DRIVER=local'."\n".
-        'QUEUE_CONNECTION=sync'."\n".
-        'SESSION_DRIVER=file'."\n".
-        'SESSION_LIFETIME=120'."\n\n".
-        'MEMCACHED_HOST=127.0.0.1'."\n\n".
-        'REDIS_HOST=127.0.0.1'."\n".
-        'REDIS_PASSWORD=null'."\n".
-        'REDIS_PORT=6379'."\n\n".
-        'MAIL_MAILER=smtp'."\n".
-        'MAIL_HOST='.$request->mail_host."\n".
-        'MAIL_PORT='.$request->mail_port."\n".
-        'MAIL_USERNAME='.$request->mail_username."\n".
-        'MAIL_PASSWORD='.$request->mail_password."\n".
-        'MAIL_ENCRYPTION=null'."\n".
-        'MAIL_FROM_ADDRESS=null'."\n".
-        'MAIL_FROM_NAME=\''.$request->app_name."'\n\n".
-        'AWS_ACCESS_KEY_ID='."\n".
-        'AWS_SECRET_ACCESS_KEY='."\n".
-        'AWS_DEFAULT_REGION=us-east-1'."\n".
-        'AWS_BUCKET='."\n".
-        'AWS_USE_PATH_STYLE_ENDPOINT=false'."\n\n".
-        'PUSHER_APP_ID='."\n".
-        'PUSHER_APP_KEY='."\n".
-        'PUSHER_APP_SECRET='."\n".
-        'PUSHER_APP_CLUSTER=mt1'."\n\n".
-        'MIX_PUSHER_APP_KEY='."\n".
-        'MIX_PUSHER_APP_CLUSTER='."\n\n".
-        'PAYPAL_BASE_URI=https://api-m.sandbox.paypal.com'."\n".
-        'PAYPAL_CLIENT_ID=ASKGuXrMkRNWHnhAb4A49DzDH5WV4KI1tzwvHw1uaLJPHHSY27jc1AyjjdXFni_fVEcuS9FI1EKZcdNm'."\n".
-        'PAYPAL_CLIENT_SECRET=EFZXxyknLyWXu-ggniZSGwAwqFdH5Y3vS6nEcSD77c8mEvI6NPuDVQt-WpIcz2kTXsLukY32TZ8slIZa'."\n".
-        'PAYPAL_MONTHLY_PLAN=P-3HL46566ET627512XMDBS6EI'."\n".
-        'PAYPAL_YEARLY_PLAN=P-57E26743EH969593FMDBS7QI'."\n\n".
-        'STRIPE_BASE_URI=https://api.stripe.com'."\n".
-        'STRIPE_KEY=pk_test_51IkVYcHdZxBbG9oi0vltSm75Gd1Sb7MSD0MGGQzz2u2c1Zma6WCxxqi0gTXAM7xgmdZZIVeB1cXkgmYAmRpusWPg003YEtwhB3'."\n".
-        'STRIPE_SECRET=sk_test_51IkVYcHdZxBbG9oitCh17bmvc6kHhOtQ8HkanugbLwRlre52F6uq0Vs4cec7hHEwY2FeRmFSMmIMDtjGA0O9eVlM00ziij2UgJ'."\n\n".
-        'SSLCOMMERZE_BASE_URI= https://sandbox.sslcommerz.com'."\n\n".
-        'GOOGLE_CLIENT_ID=156170740263-a6fo43vhbh0uc4ehf56hm4e948u301kn.apps.googleusercontent.com'."\n".
-        'GOOGLE_CLIENT_SECRET=ihbqeruodUfTOxMwJXHvnZn3'."\n\n".
-        'FACEBOOK_CLIENT_ID=241753833950328'."\n".
-        'FACEBOOK_CLIENT_SECRET=aaad2a133ceb80661b5545abab8e5bde';
-
-        file_put_contents($envPath, $envFileData);
+        setEnvValue($env_val);
 
     }
 
