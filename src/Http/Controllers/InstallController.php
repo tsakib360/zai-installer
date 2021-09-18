@@ -197,8 +197,33 @@ class InstallController extends Controller
         $env_val['MAIL_USERNAME'] = $request->mail_username;
         $env_val['MAIL_PASSWORD'] = $request->mail_password;
 
-        setEnvValue($env_val);
+        $this->setEnvValue($env_val);
 
+    }
+
+    public function setEnvValue($values) 
+    {
+        $envFile = app()->environmentFilePath();
+        $str = file_get_contents($envFile);
+
+        if (count($values) > 0) {
+            foreach ($values as $envKey => $envValue) {
+                $str .= "\n";
+                $keyPosition = strpos($str, "{$envKey}=");
+                $endOfLinePosition = strpos($str, "\n", $keyPosition);
+                $oldLine = substr($str, $keyPosition, $endOfLinePosition - $keyPosition);
+
+                if (!$keyPosition || !$endOfLinePosition || !$oldLine) {
+                    $str .= "{$envKey}={$envValue}\n";
+                } else {
+                    $str = str_replace($oldLine, "{$envKey}={$envValue}", $str);
+                }
+            }
+        }
+
+        $str = substr($str, 0, -1);
+        if (!file_put_contents($envFile, $str)) return false;
+        return true;
     }
 
     private function checkDatabaseConnection(Request $request)
