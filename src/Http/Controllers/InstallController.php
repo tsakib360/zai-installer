@@ -189,6 +189,7 @@ class InstallController extends Controller
     {
         $env_val['APP_KEY'] = 'base64:'.base64_encode(Str::random(32));
         $env_val['APP_URL'] = $request->app_url;
+        $env_val['DB_HOST'] = $request->db_host;
         $env_val['DB_DATABASE'] = $request->db_name;
         $env_val['DB_USERNAME'] = $request->db_user;
         $env_val['DB_PASSWORD'] = $request->db_password;
