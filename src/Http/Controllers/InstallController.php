@@ -72,7 +72,7 @@ class InstallController extends Controller
 
     public function serverValidation(Request $request)
     {
-        if($this->phpversion() > 7.0 && $this->mysqli() == 1 && $this->curl_version() == 1 && $this->allow_url_fopen() == 1 && $this->openssl() == 1 && $this->pdo() == 1 && $this->bcmath() == 1 && $this->ctype() == 1 && $this->fileinfo() == 1 && $this->mbstring() == 1 && $this->tokenizer() == 1 && $this->xml() == 1 && $this->json() == 1 && $request->routes == 1 && $request->resources == 1 && $request->public == 1 && $request->storage = 1 && $request->env == 1){
+        if($this->phpversion() > 7.0 && $this->mysqli() == 1 && $this->curl_version() == 1 && $this->allow_url_fopen() == 1 && $this->openssl() == 1 && $this->pdo() == 1 && $this->bcmath() == 1 && $this->ctype() == 1 && $this->fileinfo() == 1 && $this->mbstring() == 1 && $this->tokenizer() == 1 && $this->xml() == 1 && $this->json() == 1){
             session()->put('validated', 'Yes');
             return redirect(route('ZaiInstaller::config'));
         }
