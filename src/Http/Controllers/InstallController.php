@@ -50,7 +50,7 @@ class InstallController extends Controller
             $storage_value = 1;
         }
         $env_prem = substr(sprintf('%o', fileperms(base_path('.env'))), -4);
-        if($env_prem == '0777' || $env_prem == '0666' || $env_prem == '0644' || $env_prem == '0775') {
+        if($env_prem == '0777' || $env_prem == '0666' || $env_prem == '0644' || $env_prem == '0775' || $env_prem == '0664') {
             $env_value = 1;
         }
         if (file_exists(storage_path('installed'))) {
