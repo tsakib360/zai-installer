@@ -1,6 +1,6 @@
 {
     "name": "tsakib360/zai-installer",
-    "description": "Laravel Web Installer For Zainiklab",
+    "description": "Laravel Web Installer For Stavbook",
     "require": {
         "php": "^7.0.0|^8.0.0"
     },

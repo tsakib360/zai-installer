@@ -34,29 +34,29 @@ class InstallController extends Controller
         $storage_value = 0;
         $env_value = 0;
         $route_perm = substr(sprintf('%o', fileperms(base_path('routes'))), -4);
-        if($route_perm == '0777') {
+        if($route_perm == '0777' || $route_perm == '0775') {
             $route_value = 1;
         }
         $resource_prem = substr(sprintf('%o', fileperms(base_path('resources'))), -4);
-        if($resource_prem == '0777') {
+        if($resource_prem == '0777' || $resource_prem == '0775') {
             $resource_value = 1;
         }
         $public_prem = substr(sprintf('%o', fileperms(base_path('public'))), -4);
-        if($public_prem == '0777') {
+        if($public_prem == '0777' || $public_prem == '0775') {
             $public_value = 1;
         }
         $storage_prem = substr(sprintf('%o', fileperms(base_path('storage'))), -4);
-        if($storage_prem == '0777') {
+        if($storage_prem == '0777' || $storage_prem == '0775') {
             $storage_value = 1;
         }
         $env_prem = substr(sprintf('%o', fileperms(base_path('.env'))), -4);
-        if($env_prem == '0777' || $env_prem == '0666') {
+        if($env_prem == '0777' || $env_prem == '0666' || $env_prem == '0644' || $env_prem == '0775') {
             $env_value = 1;
         }
         if (file_exists(storage_path('installed'))) {
             return redirect('/');
         }
-        return view('zainiklab.installer.pre-install', compact('route_value', 'resource_value', 'public_value', 'storage_value', 'env_value'));
+        return view('stavbook.installer.pre-install', compact('route_value', 'resource_value', 'public_value', 'storage_value', 'env_value'));
     }
 
     public function configuration()
@@ -65,7 +65,7 @@ class InstallController extends Controller
             return redirect('/');
         }
         if(session()->has('validated')) {
-            return view('zainiklab.installer.config');
+            return view('stavbook.installer.config');
         }
         return redirect(route('ZaiInstaller::pre-install'));
     }
@@ -147,10 +147,6 @@ class InstallController extends Controller
 
     public function final(Request $request)
     {
-        if($request->purchasecode != 'NHLE-L6MI-4GE4-ETEV') {
-            return Redirect::back()->withErrors('Purchase code not matched!');
-        }
-
         if (! $this->checkDatabaseConnection($request)) {
             return Redirect::back()->withErrors('Database credential is not correct!');
         }

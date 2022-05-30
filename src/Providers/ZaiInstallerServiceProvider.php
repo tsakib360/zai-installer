@@ -41,10 +41,10 @@ class ZaiInstallerServiceProvider extends ServiceProvider
     protected function publishFiles()
     {
         $this->publishes([
-            __DIR__.'/../assets' => public_path('zaifiles'),
+            __DIR__.'/../assets' => public_path('stavfiles'),
         ]);
         $this->publishes([
-            __DIR__.'/../Views' => base_path('resources/views/zainiklab/installer'),
+            __DIR__.'/../Views' => base_path('resources/views/stavbook/installer'),
         ]);
     }
 }

@@ -1,4 +1,4 @@
-# Zainiklab Web Installer | A Web Installer
+# Stavbook Web Installer | A Web Installer
 
 - [About](#about)
 - [Requirements](#requirements)
@@ -30,7 +30,7 @@ The current features are :
 1. From your projects root folder in terminal run:
 
 ```bash
-    composer require tsakib360/zai-installer
+composer require tsakib360/zai-installer
 ```
 
 2. Register the package
@@ -38,15 +38,15 @@ The current features are :
 Register the package with laravel in `config/app.php` under `providers` with the following:
 
 ```php
-	'providers' => [
-	    Tsakib360\ZaiInstaller\Providers\ZaiInstallerServiceProvider::class,
-	];
+'providers' => [
+	Tsakib360\ZaiInstaller\Providers\ZaiInstallerServiceProvider::class,
+];
 ```
 
 3. Publish the packages views, config file, assets, and language files by running the following from your projects root folder:
 
 ```bash
-    php artisan vendor:publish --provider="Tsakib360\ZaiInstaller\Providers\ZaiInstallerServiceProvider"
+php artisan vendor:publish --provider="Tsakib360\ZaiInstaller\Providers\ZaiInstallerServiceProvider"
 ```
 
 ## Routes
@@ -61,9 +61,9 @@ Register the package with laravel in `config/app.php` under `providers` with the
 
 ## Folders
 
-|Folder|Folder Information|
-|:------------|:------------|
-|`public/zaifiles`|This folder contains all the asset files, this file is responsible for the styling of your installer, you can overide the default stylesheet `style.css` and add your own.|
-|`resources/views/zainiklab/installer`|This folder contains the HTML code for your installer, it is 100% customizable, give it a look and see how nice/clean it is.|
+| Folder                               |Folder Information|
+|:-------------------------------------|:------------|
+| `public/stavfiles`                   |This folder contains all the asset files, this file is responsible for the styling of your installer, you can overide the default stylesheet `style.css` and add your own.|
+| `resources/views/stavbook/installer` |This folder contains the HTML code for your installer, it is 100% customizable, give it a look and see how nice/clean it is.|
 
 
