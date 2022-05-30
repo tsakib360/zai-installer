@@ -42,7 +42,7 @@ class InstallController extends Controller
             $resource_value = 1;
         }
         $public_prem = substr(sprintf('%o', fileperms(base_path('public'))), -4);
-        if($public_prem == '0777' || $public_prem == '0775') {
+        if($public_prem == '0777' || $public_prem == '0775' || $public_prem == '0750') {
             $public_value = 1;
         }
         $storage_prem = substr(sprintf('%o', fileperms(base_path('storage'))), -4);
